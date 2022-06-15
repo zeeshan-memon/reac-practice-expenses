@@ -6,21 +6,13 @@ import React from "react";
 const Expenses = (props) => {
   return (
     <Card className="expenses">
-      <ExpenseItem
-        date={props.items[0].expenseDate}
-        title={props.items[0].title}
-        price={props.items[0].price}
-      />
-      <ExpenseItem
-        date={props.items[1].expenseDate}
-        title={props.items[1].title}
-        price={props.items[1].price}
-      />
-      <ExpenseItem
-        date={props.items[2].expenseDate}
-        title={props.items[2].title}
-        price={props.items[2].price}
-      />
+      {props.expenses.map((expense) => (
+        <ExpenseItem
+          date={expense.expenseDate}
+          title={expense.title}
+          price={expense.price}
+        />
+      ))}
     </Card>
   );
 };
